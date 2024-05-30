@@ -15,7 +15,7 @@ formData.addEventListener("submit", function (e) {
 
   if (
     validationEmail()
-    // && validationPassword()
+    && validationPassword()
   ) {
     console.log("helllo");
     dataInputs();
@@ -60,8 +60,7 @@ mode.addEventListener("click", async function (e) {
 function dataInputs() {
   const data = {
     email: inputs[0].value,
-    password: "mo123456",
-    // inputs[1].value,
+    password: inputs[1].value,
   };
 
   console.log("data is ", data);

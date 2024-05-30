@@ -160,6 +160,6 @@ async function toasterPop (){
     
       await setTimeout(() => {
         location.href = "./index.html";
-      }, 3000);
+      }, 1000);
       loading.classList.add("d-none");
 }
