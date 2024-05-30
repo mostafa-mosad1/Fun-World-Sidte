@@ -18,8 +18,12 @@ links.forEach((link) => {
 });
 
 log_out.addEventListener("click", async function (e) {
- toasterPop();
- localStorage.removeItem("uToken")
+  loading.classList.remove("d-none");
+  await setTimeout(()=>{
+  location.href="./index.html";
+},1500)
+ localStorage.removeItem("uToken");
+ loading.classList.remove("d-none");
 });
 
 
@@ -146,20 +150,4 @@ function stopVideo(event) {
 
 function showDetails(id) {
   location.href = `./details.html?id=${id}`;
-}
-async function toasterPop (){
-    $(document).ready(function () {
-        toastr.options.timeOut = 32000; // 3s
-        toastr.success(`good lock!  <div class="loading ">
-        <span class="loader"></span>
-     </div>`);
-        $("#linkButton").click(function () {
-          toastr.success("Click Button");
-        });
-      });
-    
-      await setTimeout(() => {
-        location.href = "./index.html";
-      }, 1000);
-      loading.classList.add("d-none");
 }
